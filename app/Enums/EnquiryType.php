@@ -3,7 +3,7 @@ namespace App\Enums;
 
 enum EnquiryType: string
 {
-    case EVALUATION = 'evaluation';
+    case VISITATION = 'visitation';
     case ENQUIRY = 'enquiry';
 
     public static function values(): array

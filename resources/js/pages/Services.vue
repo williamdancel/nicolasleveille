@@ -133,61 +133,6 @@ import CTASection from '@/components/CTA/CTASection.vue'
   font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* Hero Section Animations Only */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scale {
-  from {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  to {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.05; }
-  50% { opacity: 0.15; }
-}
-
-/* Animation Classes */
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slideUp 0.8s ease-out forwards;
-}
-
-.animate-scale {
-  animation: scale 0.6s ease-out 0.3s forwards;
-  transform-origin: center;
-}
-
-.animate-pulse-slow {
-  animation: pulse 4s ease-in-out infinite;
-}
-
 /* Delay Utilities */
 .animation-delay-1000 {
   animation-delay: 1s;

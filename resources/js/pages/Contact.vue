@@ -120,8 +120,8 @@
 </template>
 
 <script setup lang="ts">
-import ContactForm  from '@/components/ContactForm/ContactFrom.vue'
 import { Head } from '@inertiajs/vue3'
+import ContactForm  from '@/components/ContactForm/ContactForm.vue'
 
 const handleImageError = (event: Event) => {
   const target = event.target as HTMLImageElement

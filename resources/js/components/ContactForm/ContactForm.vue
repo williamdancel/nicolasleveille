@@ -105,7 +105,7 @@ const submitForm = async () => {
                     type="text" 
                     required
                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all text-gray-900"
-                    placeholder="Prénom"
+                    placeholder="Prénom" maxlength="50"
                 >
             </div>
             <div>
@@ -115,7 +115,7 @@ const submitForm = async () => {
                     type="text" 
                     required
                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all text-gray-900"
-                    placeholder="Nom"
+                    placeholder="Nom" maxlength="50"
                 >
             </div>
             </div>
@@ -127,7 +127,7 @@ const submitForm = async () => {
                       type="tel" 
                       required
                       class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all text-gray-900"
-                      placeholder="819 123 4567"
+                      placeholder="819 123 4567" maxlength="15"
                     >
                 </div>
                 <div>

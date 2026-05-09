@@ -37,6 +37,7 @@ const submitInquiry = () => {
   // Validate form
   if (!inquiryForm.name || !inquiryForm.email || !inquiryForm.phone) {
     alert('Veuillez remplir tous les champs obligatoires.')
+
     return
   }
 

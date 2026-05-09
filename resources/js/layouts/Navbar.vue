@@ -66,7 +66,7 @@ onUnmounted(() => {
       <nav class="hidden md:flex gap-8 tracking-wide navbar-menu">
         <Link href="/profil">PROFIL</Link>
         <Link href="/services">SERVICES</Link>
-        <Link href="/properietes">PROPRIÉTÉS</Link>
+        <!-- <Link href="/properietes">PROPRIÉTÉS</Link> -->
         <Link href="/prestige">PRESTIGE</Link>
         <Link href="/parc-immoblier">PARC IMMOBILIER</Link>
         <Link href="/blogue">BLOGUE</Link>
@@ -95,7 +95,7 @@ onUnmounted(() => {
       <nav class="flex flex-col gap-6 text-center">
         <Link @click="toggleMenu" href="/equipe">ÉQUIPE</Link>
         <Link @click="toggleMenu" href="/services">SERVICES</Link>
-        <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link>
+        <!-- <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link> -->
         <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link>
         <Link @click="toggleMenu" href="/parc-immoblier">PARC IMMOBILIER</Link>
         <Link @click="toggleMenu" href="/blogue">BLOGUE</Link>

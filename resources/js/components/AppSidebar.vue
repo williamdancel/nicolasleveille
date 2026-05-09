@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { LayoutGrid, Handshake, House } from 'lucide-vue-next';
+import { LayoutGrid, Handshake, Notebook } from 'lucide-vue-next';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -14,7 +14,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem
 } from '@/components/ui/sidebar';
-import { dashboard, enquiries, listing } from '@/routes';
+import { dashboard, enquiries, evaluation } from '@/routes';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -24,14 +24,14 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Listing',
-        href: listing(),
-        icon: House,
-    },
-    {
         title: 'Enquiries',
         href: enquiries(),
         icon: Handshake,
+    },
+    {
+        title: 'Evaluation',
+        href: evaluation(),
+        icon: Notebook,
     }
 ];
 
