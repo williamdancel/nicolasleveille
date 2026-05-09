@@ -2,8 +2,15 @@
 import { Link } from '@inertiajs/vue3'
 import { ref, reactive } from 'vue'
 
+// Define the Property type
+interface Property {
+  title: string
+  location: string
+  price: string
+}
+
 const showModal = ref(false)
-const selectedProperty = ref(null)
+const selectedProperty = ref<Property | null>(null)
 
 const inquiryForm = reactive({
   name: '',
@@ -12,7 +19,7 @@ const inquiryForm = reactive({
   message: ''
 })
 
-const openInquiryModal = (property: any) => {
+const openInquiryModal = (property: Property) => {
   selectedProperty.value = property
   showModal.value = true
 }

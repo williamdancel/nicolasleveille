@@ -282,3 +282,139 @@
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+
+/* Hero Section Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-from-left {
+  animation: slideFromLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-from-right {
+  animation: slideFromRight 0.8s ease-out forwards;
+}
+
+.animate-scale {
+  animation: scale 0.6s ease-out 0.3s forwards;
+  transform-origin: center;
+}
+
+.animate-scale-delayed {
+  animation: scale 0.6s ease-out 0.5s forwards;
+  transform-origin: center;
+}
+
+.animate-fade-in-up {
+  animation: slideUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Delay Utilities */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Hover effects */
+.bg-black {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-black:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+/* Delay Utilities */
+.animation-delay-1000 {
+  animation-delay: 1s;
+}

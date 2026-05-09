@@ -1,5 +1,4 @@
 <?php
-// app/Http/Resources/EnquiryResource.php
 
 namespace App\Http\Resources;
 

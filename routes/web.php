@@ -20,6 +20,10 @@ Route::get('/properietes', function () {
     return Inertia::render('Properties');
 })->name('properties');
 
+Route::get('/free-evaluation', function () {
+    return Inertia::render('Evaluation');
+})->name('free-evaluation');
+
 Route::get('/prestige', function () {
     return Inertia::render('Prestige');
 })->name('prestige');
@@ -37,10 +41,12 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'admin/Dashboard')->name('dashboard');
     Route::inertia('enquiries', 'admin/Enquiries')->name('enquiries');
-     Route::inertia('listing', 'admin/Listing')->name('listing');
+    Route::inertia('listing', 'admin/Listing')->name('listing');
+    Route::inertia('evaluation', 'admin/Evaluation')->name('evaluation');
 });
 
 require __DIR__.'/settings.php';

@@ -18,8 +18,8 @@
         <div>
           <h4 class="font-semibold text-lg mb-4 text-[#ac8c4c]">Navigation</h4>
           <ul class="space-y-2">
-            <li><Link href="/equipe" class="text-gray-400 hover:text-[#ac8c4c] transition-colors">Équipe</Link></li>
-            <li><Link href="/properietes" class="text-gray-400 hover:text-[#ac8c4c] transition-colors">Propriétés</Link></li>
+            <li><Link href="/profil" class="text-gray-400 hover:text-[#ac8c4c] transition-colors">Profil</Link></li>
+            <!-- <li><Link href="/properietes" class="text-gray-400 hover:text-[#ac8c4c] transition-colors">Propriétés</Link></li> -->
             <li><Link href="/parc-immoblier" class="text-gray-400 hover:text-[#ac8c4c] transition-colors">Parc immobilier</Link></li>
           </ul>
         </div>

@@ -44,7 +44,7 @@ import { Link } from '@inertiajs/vue3'
           <a href="tel:819-xxx-xxx" class="bg-red-600 px-6 py-3 rounded-full">
             Appelez-moi
           </a>
-          <Link href="/contact" class="bg-gray-200 text-black px-6 py-3 rounded">
+          <Link href="/free-evaluation" class="bg-[#ac8c4c] text-white px-6 py-3 rounded">
             Évaluation gratuite
           </Link>
         </div>
