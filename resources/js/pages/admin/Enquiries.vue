@@ -376,7 +376,7 @@ onMounted(() => {
                 <button @click="deleteEnquiry(enquiry.id)" class="text-red-600 hover:text-red-900">Delete</button>
               </td>
             </tr>
-            <tr v-if="enquiries.length === 0">
+            <tr v-if="enquiriesList.length === 0">
               <td colspan="9" class="px-6 py-8 text-center text-gray-500">
                 No enquiries found
               </td>
@@ -389,7 +389,7 @@ onMounted(() => {
       <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
         <div class="flex justify-between items-center">
           <div class="text-sm text-gray-700">
-            Showing {{ enquiries.length }} of {{ pagination.total }} results
+            Showing {{ enquiriesList.length }} of {{ pagination.total }} results
           </div>
           <div class="flex gap-2">
             <button 
