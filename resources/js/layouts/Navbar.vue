@@ -93,7 +93,7 @@ onUnmounted(() => {
       class="fixed inset-0 z-[60] bg-[#1a1820] flex flex-col items-center justify-center text-white text-lg"
     >
       <nav class="flex flex-col gap-6 text-center">
-        <Link @click="toggleMenu" href="/equipe">ÉQUIPE</Link>
+        <Link @click="toggleMenu" href="/profil">PROFIL</Link>
         <Link @click="toggleMenu" href="/services">SERVICES</Link>
         <!-- <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link> -->
         <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link>
