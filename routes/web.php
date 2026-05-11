@@ -40,6 +40,46 @@ Route::get('/contact', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
+Route::get('/services/gatineau-ottawa', function () {
+    return Inertia::render('services/GatineauOttawa');
+})->name('gatineau-ottawa');
+
+Route::get('/services/secteur-aylmer', function () {
+    return Inertia::render('services/SecteurAylmer');
+})->name('secteur-aylmer');
+
+Route::get('/services/secteur-hull', function () {
+    return Inertia::render('services/SecteurHull');
+})->name('secteur-hull');
+
+Route::get('/services/secteur-wakefield', function () {
+    return Inertia::render('services/SecteurWakefield');
+})->name('secteur-wakefield');
+
+Route::get('/services/region-de-l-outaouanis-et-pontiac', function () {
+    return Inertia::render('services/RegionDeOutaouanis');
+})->name('region-de-l-outaouanis-et-pontiac');
+
+Route::get('/services/secteur-chelsea', function () {
+    return Inertia::render('services/SecteurChelsea');
+})->name('secteur-chelsea');
+
+Route::get('/services/secteur-buckingham-masson-angers', function () {
+    return Inertia::render('services/SecteurBuckingham');
+})->name('secteur-buckingham-masson-angers');
+
+Route::get('/services/acheter-une-maison-avec-un-mauvais-credit', function () {
+    return Inertia::render('services/BuyingWithBadCredit');
+})->name('acheter-une-maison-avec-un-mauvais-credit');
+
+Route::get('/services/reprise-de-possession', function () {
+    return Inertia::render('services/Reprossesion');
+})->name('reprise-de-possession');
+
+Route::get('/services/un-service-de-courtier-immobilier', function () {
+    return Inertia::render('services/WhyRealEstateBroker');
+})->name('un-service-de-courtier-immobilier');
+
 
 
 Route::middleware(['auth', 'verified'])->group(function () {

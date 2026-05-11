@@ -1,11 +1,63 @@
-
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import { Head, Link } from '@inertiajs/vue3'
 import CTASection from '@/components/CTA/CTASection.vue'
+
+interface Agent {
+  id: number
+  name: string
+  title: string
+  slug: string
+}
+
+const agents: Agent[] = [
+  {
+    id: 1,
+    name: 'Région de Gatineau–Ottawa',
+    title: 'Courtier immobilier agréé',
+    slug: 'gatineau-ottawa'
+  },
+  {
+    id: 2,
+    name: 'Secteur Aylmer',
+    title: 'Courtier immobilier agréé',
+    slug: 'secteur-aylmer'
+  },
+  {
+    id: 3,
+    name: 'Secteur Hull',
+    title: 'Courtier immobilier agréé',
+    slug: 'secteur-hull'
+  },
+  {
+    id: 4,
+    name: 'Secteur Wakefield',
+    title: 'Courtier immobilier agréé',
+    slug: 'secteur-wakefield'
+  },
+  {
+    id: 5,
+    name: 'Région de l’Outaouais et Pontiac',
+    title: 'Courtier immobilier agréé',
+    slug: 'region-de-l-outaouanis-et-pontiac'
+  },
+  {
+    id: 6,
+    name: 'Secteur Chelsea',
+    title: 'Courtier immobilier agréé',
+    slug: 'secteur-chelsea'
+  },
+  {
+    id: 7,
+    name: 'Secteur Buckingham & Masson-Angers',
+    title: 'Courtier immobilier agréé',
+    slug: 'secteur-buckingham-masson-angers'
+  },
+  
+]
 </script>
 
 <template>
-  <Head title="Services"/>
+  <Head title="Services" />
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section class="bg-gray-900 text-white py-32 text-center relative overflow-hidden">
@@ -25,104 +77,75 @@ import CTASection from '@/components/CTA/CTASection.vue'
       </div>
     </section>
 
-    <!-- Main Content - No Transitions -->
+    <!-- Main Content -->
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Intro Text -->
-        <div class="max-w-3xl mx-auto text-center mb-16">
-          <h2 class="text-3xl font-serif text-gray-900 mb-4">
-            Un service première classe et personnalisé.
-          </h2>
-          <p class="text-gray-600 leading-relaxed">
-            Je mets en place une structure claire pour vendre ou acheter avec plus de confiance, 
-            moins de friction et plus d'impact sur le résultat final.
-          </p>
-        </div>
-
-        <!-- Services Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <!-- Service 1 -->
-          <div class="group bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 bg-[#ac8c4c] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#ac8c4c]/80 transition-colors duration-300">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Connaissance et expertise du marché</h3>
-            <p class="text-gray-500 text-sm">
-              Analyse approfondie du marché local, tendances et opportunités pour maximiser votre investissement.
-            </p>
+        <!-- Agents Section -->
+        <div class="mb-16">
+          <!-- Section Header -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-serif text-gray-900">Courtier Immobilier</h2>
+            <div class="w-16 h-0.5 bg-[#ac8c4c] mx-auto mt-4"></div>
           </div>
 
-          <!-- Service 2 -->
-          <div class="group bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 bg-[#ac8c4c] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#ac8c4c]/80 transition-colors duration-300">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Réseau étendu et accès aux annonces</h3>
-            <p class="text-gray-500 text-sm">
-              Accès exclusif aux propriétés dès leur mise en marché et réseau de partenaires privilégiés.
-            </p>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="group bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 bg-[#ac8c4c] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#ac8c4c]/80 transition-colors duration-300">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Stratégies de marketing et de publicité</h3>
-            <p class="text-gray-500 text-sm">
-              Campagnes publicitaires ciblées, mise en marché professionnelle et visibilité optimale.
-            </p>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="group bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 bg-[#ac8c4c] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#ac8c4c]/80 transition-colors duration-300">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2h-2M9 5h7a2 2 0 012 2v2m-2 7v2m0 0h2m-2 0v2m0-2h2"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Négociation et expertise contractuelle</h3>
-            <p class="text-gray-500 text-sm">
-              Négociation rigoureuse, protection de vos intérêts et expertise des documents légaux.
-            </p>
-          </div>
-
-          <!-- Service 5 -->
-          <div class="group bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 bg-[#ac8c4c] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#ac8c4c]/80 transition-colors duration-300">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Gain en temps et moins de stress</h3>
-            <p class="text-gray-500 text-sm">
-              Gestion complète du processus, coordination des visites et suivi personnalisé.
-            </p>
-          </div>
-
-          <!-- Service 6 -->
-          <div class="group bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 bg-[#ac8c4c] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#ac8c4c]/80 transition-colors duration-300">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Aperçu du marché et conseils</h3>
-            <p class="text-gray-500 text-sm">
-              Rapports de marché personnalisés, conseils stratégiques et accompagnement sur mesure.
-            </p>
+          <!-- Agents Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Link 
+              v-for="agent in agents" 
+              :key="agent.id"
+              :href="`/services/${agent.slug}`"
+              class="group block"
+            >
+              <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-800 mb-1">{{ agent.name }}</h3>
+                  <p class="text-[#ac8c4c] text-sm font-medium mb-3">{{ agent.title }}</p>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
 
-        <CTASection/>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Acheter avec mauvais crédit -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center">
+            <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4">Acheter une maison avec un mauvais crédit</h2>
+            <p class="text-gray-600 text-sm mb-6">Découvrez les solutions adaptées à votre situation financière</p>
+            <Link 
+              href="/services/acheter-une-maison-avec-un-mauvais-credit" 
+              class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
+            >
+              En savoir plus
+            </Link>
+          </div>
+
+          <!-- Reprise de possession -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center">
+            <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4">Reprise de possession</h2>
+            <p class="text-gray-600 text-sm mb-6">Accompagnement expert pour les propriétés en reprise de possession</p>
+            <Link 
+              href="/services/reprise-de-possession" 
+              class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
+            >
+              En savoir plus
+            </Link>
+          </div>
+
+          <!-- Pourquoi un Courtier Immobilier -->
+          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center">
+            <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4">Pourquoi un Courtier Immobilier?</h2>
+            <p class="text-gray-600 text-sm mb-6">Les avantages d'être accompagné par un expert certifié</p>
+            <Link 
+              href="/services/un-service-de-courtier-immobilier" 
+              class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
+            >
+              En savoir plus
+            </Link>
+          </div>
+        </div>
+
+        <CTASection />
       </div>
     </section>
   </div>
@@ -138,12 +161,64 @@ import CTASection from '@/components/CTA/CTASection.vue'
   animation-delay: 1s;
 }
 
-/* Hover Effects for Service Cards */
-.group {
-  transition: all 0.3s ease;
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.group:hover {
-  transform: translateY(-5px);
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease forwards;
+}
+
+.animate-scale {
+  animation: scale 0.6s ease forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
 }
 </style>
