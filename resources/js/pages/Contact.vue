@@ -53,8 +53,8 @@
                   </div>
                   <div>
                     <h3 class="font-semibold text-gray-900 mb-1">Téléphone</h3>
-                    <a href="tel:+18195551234" class="text-gray-600 hover:text-red-500 transition-colors">
-                      819-XXX-XXX
+                    <a href="tel:+8196642182" class="text-gray-600 hover:text-red-500 transition-colors">
+                      819-664-2182
                     </a>
                   </div>
                 </div>
@@ -86,7 +86,7 @@
 
               <ContactForm/>
               <!-- Social Media Links -->
-              <div class="mt-6 pt-6 border-t border-gray-100">
+              <!-- <div class="mt-6 pt-6 border-t border-gray-100">
                 <p class="text-sm text-gray-500 text-center mb-3">Suivez-moi</p>
                 <div class="flex justify-center gap-4">
                   <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300 text-gray-600">
@@ -110,7 +110,7 @@
                     </svg>
                   </a>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

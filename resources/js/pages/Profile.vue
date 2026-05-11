@@ -133,7 +133,7 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
           <!-- CONTACT -->
           <div>
             <h3 class="text-4xl uppercase tracking-wide font-light mb-8">
-              Contact
+              Coordonnées
             </h3>
 
             <div class="space-y-8">
@@ -172,25 +172,25 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
             </div>
           </div>
 
-          <!-- BUSINESS HOURS -->
+          <!-- HEURES D'OUVERTURE -->
           <div>
             <h3 class="text-4xl uppercase tracking-wide font-light mb-8">
-              Business Hours
+              Heures d'ouverture
             </h3>
 
             <div class="space-y-3 text-xl">
-              <p class="font-black">7 days a week</p>
+              <p class="font-black">7 jours par semaine</p>
               <p class="font-black">8:00H - 20:00H</p>
             </div>
           </div>
 
-          <!-- FREE EVALUATION-->
+          <!-- ÉVALUATION GRATUITE -->
           <div>
             <Link 
-              href="/free-evaluation" 
+              href="/evaluation-gratuite" 
               class="bg-[#b0884c] text-white px-8 py-4 rounded-lg hover:bg-[#96733f] transition-colors duration-200 font-black text-5xl md:text-6xl leading-none mb-4 inline-block"
             >
-              Free evaluation
+              Évaluation gratuite
             </Link>
           </div>
         </div>

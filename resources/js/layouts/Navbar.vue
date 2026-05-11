@@ -69,7 +69,7 @@ onUnmounted(() => {
         <!-- <Link href="/properietes">PROPRIÉTÉS</Link> -->
         <Link href="/prestige">PRESTIGE</Link>
         <Link href="/parc-immoblier">PARC IMMOBILIER</Link>
-        <Link href="/blogue">BLOGUE</Link>
+        <!-- <Link href="/blogue">BLOGUE</Link> -->
         <Link href="/contact">CONTACT</Link>
       </nav>
 
@@ -98,7 +98,7 @@ onUnmounted(() => {
         <!-- <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link> -->
         <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link>
         <Link @click="toggleMenu" href="/parc-immoblier">PARC IMMOBILIER</Link>
-        <Link @click="toggleMenu" href="/blogue">BLOGUE</Link>
+        <!-- <Link @click="toggleMenu" href="/blogue">BLOGUE</Link> -->
         <Link @click="toggleMenu" href="/contact">CONTACT</Link>
       </nav>
 

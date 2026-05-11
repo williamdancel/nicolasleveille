@@ -20,9 +20,9 @@ Route::get('/properietes', function () {
     return Inertia::render('Properties');
 })->name('properties');
 
-Route::get('/free-evaluation', function () {
+Route::get('/evaluation-gratuite', function () {
     return Inertia::render('Evaluation');
-})->name('free-evaluation');
+})->name('evaluation-gratuite');
 
 Route::get('/prestige', function () {
     return Inertia::render('Prestige');

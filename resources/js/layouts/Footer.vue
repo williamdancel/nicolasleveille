@@ -8,7 +8,7 @@
         <div>
           <h4 class="font-semibold text-lg mb-4 text-[#ac8c4c]">Contact</h4>
           <ul class="space-y-2 text-gray-400">
-            <li>819-XXX-XXXX</li>
+            <li><a href="tel:+8196642182">819-664-2182</a></li>
             <li>contact@nicolasleveille.ca</li>
             <li>Gatineau, secteur Aylmer</li>
           </ul>
