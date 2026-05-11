@@ -14,13 +14,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        User::factory()->create([
+        User::updateOrCreate([
             'name' => 'Chester',
             'email' => 'chester@gokw.ca',
             'password' => bcrypt(env('DEFAULT_USER_PASSWORD')),
         ]);
         
-        User::factory()->create([
+        User::updateOrCreate([
             'name' => 'Nicolas',
             'email' => 'nicolas@gokw.ca',
             'password' => bcrypt(env('DEFAULT_USER_PASSWORD')),
