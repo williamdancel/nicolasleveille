@@ -20,12 +20,12 @@ import { Link } from '@inertiajs/vue3'
         <!-- Left -->
         <div class="text-center md:text-left">
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif leading-tight">
-            avec Léveillé,<br />
+            Avec Léveillé,<br />
             c’est acheté.
           </h1>
 
           <p class="mt-4 text-base sm:text-lg opacity-80">
-            Nicolas Léveillé | Courtier immobilier Gatineau
+            Nicolas Léveillé | Courtier immobilier Gatineauh
           </p>
           <p class="mt-2 text-base sm:text-lg opacity-80">
             Aylmer, Hull, Chelsea, Gatineau, Pontiac
