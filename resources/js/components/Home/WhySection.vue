@@ -9,7 +9,7 @@
           Pourquoi travailler avec moi?
         </p>
 
-        <h2 class="font-serif mb-6" style="font-size:5rem">
+        <h2 class="font-serif mb-6 responsive-heading">
           Un service net, rapide et solide.
         </h2>
 

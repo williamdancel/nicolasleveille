@@ -418,3 +418,12 @@
 .animation-delay-1000 {
   animation-delay: 1s;
 }
+.responsive-heading {
+  font-size: 5rem;
+}
+  
+@media (max-width: 768px) {
+  .responsive-heading {
+      font-size: 2rem;
+  }
+}

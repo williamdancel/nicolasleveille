@@ -20,8 +20,8 @@ import { Link } from '@inertiajs/vue3'
         <!-- Left -->
         <div class="text-center md:text-left">
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif leading-tight">
-            C’est Vu,<br />
-            C’est Vendu.
+            avec Léveillé,<br />
+            c’est acheté.
           </h1>
 
           <p class="mt-4 text-base sm:text-lg opacity-80">
