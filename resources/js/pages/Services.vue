@@ -13,43 +13,43 @@ const agents: Agent[] = [
   {
     id: 1,
     name: 'Région de Gatineau–Ottawa',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'gatineau-ottawa'
   },
   {
     id: 2,
     name: 'Secteur Aylmer',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'secteur-aylmer'
   },
   {
     id: 3,
     name: 'Secteur Hull',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'secteur-hull'
   },
   {
     id: 4,
     name: 'Secteur Wakefield',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'secteur-wakefield'
   },
   {
     id: 5,
     name: 'Région de l’Outaouais et Pontiac',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'region-de-l-outaouanis-et-pontiac'
   },
   {
     id: 6,
     name: 'Secteur Chelsea',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'secteur-chelsea'
   },
   {
     id: 7,
     name: 'Secteur Buckingham & Masson-Angers',
-    title: 'Courtier immobilier agréé',
+    title: 'courtier immobilier résidentiel',
     slug: 'secteur-buckingham-masson-angers'
   },
   
