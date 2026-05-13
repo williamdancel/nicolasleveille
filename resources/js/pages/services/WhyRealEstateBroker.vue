@@ -66,7 +66,7 @@ const contents: Content[] = [
                    Un service de courtier immobilier pour vendre ou acheter une propriété
                 </h1>
                 <br>
-                <p>Titulaire d’un BAA et d’un titre professionnel CPA, Nicolas Léveillé offre une approche professionnelle, stratégique et personnalisée dans le domaine de l’immobilier résidentiel. Courtier immobilier agréé chez Keller Williams, il accompagne ses clients avec rigueur, transparence et engagement à chaque étape de leur transaction immobilière.</p>
+                <p>Titulaire d’un BAA et d’un titre professionnel CPA, Nicolas Léveillé offre une approche professionnelle, stratégique et personnalisée dans le domaine de l’immobilier résidentiel. Courtier immobilier résidentiel chez Keller Williams, il accompagne ses clients avec rigueur, transparence et engagement à chaque étape de leur transaction immobilière.</p>
                 <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto mt-6 animate-scale"></div>
             </div>
         </section>

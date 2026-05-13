@@ -65,7 +65,7 @@ const contents: Content[] = [
                     Acheter une maison avec un mauvais crédit : comment un courtier immobilier peut vous accompagner
                 </h1>
                 <br>
-                <p>Titulaire d’un BAA et d’un titre professionnel CPA, Nicolas Léveillé apporte une approche rigoureuse, stratégique et humaine au domaine de l’immobilier résidentiel. Courtier immobilier agréé chez Keller Williams, il accompagne ses clients avec transparence, professionnalisme et dévouement dans chacune des étapes de leur projet immobilier.</p>
+                <p>Titulaire d’un BAA et d’un titre professionnel CPA, Nicolas Léveillé apporte une approche rigoureuse, stratégique et humaine au domaine de l’immobilier résidentiel. Courtier immobilier résidentiel chez Keller Williams, il accompagne ses clients avec transparence, professionnalisme et dévouement dans chacune des étapes de leur projet immobilier.</p>
                 <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto mt-6 animate-scale"></div>
             </div>
         </section>

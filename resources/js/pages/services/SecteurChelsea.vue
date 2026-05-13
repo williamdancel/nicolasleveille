@@ -68,7 +68,7 @@ const contents: Content[] = [
                     L’Expérience Nicolas Léveillé: Qui est Nicolas Léveillé?
                 </p>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif max-w-4xl mx-auto animate-slide-up">
-                    Courtier immobilier agréé | Secteur Chelsea
+                    Courtier immobilier résidentiel | Secteur Chelsea
                 </h1>
                 <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto mt-6 animate-scale"></div>
             </div>

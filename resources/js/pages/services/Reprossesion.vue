@@ -76,7 +76,7 @@ const contents: Content[] = [
                     Reprises de possession et propriétés saisies à Gatineau et dans la région de l’Outaouais
                 </h1>
                 <br>
-                <p>Titulaire d’un BAA et d’un titre professionnel CPA, Nicolas Léveillé accompagne ses clients avec une approche professionnelle, stratégique et humaine dans le domaine de l’immobilier résidentiel. Courtier immobilier agréé chez Keller Williams, il met à profit son expertise financière et sa connaissance du marché immobilier de l’Outaouais afin d’offrir un service personnalisé, transparent et efficace.</p>
+                <p>Titulaire d’un BAA et d’un titre professionnel CPA, Nicolas Léveillé accompagne ses clients avec une approche professionnelle, stratégique et humaine dans le domaine de l’immobilier résidentiel. Courtier immobilier résidentiel chez Keller Williams, il met à profit son expertise financière et sa connaissance du marché immobilier de l’Outaouais afin d’offrir un service personnalisé, transparent et efficace.</p>
                 <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto mt-6 animate-scale"></div>
             </div>
         </section>
