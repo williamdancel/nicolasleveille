@@ -108,41 +108,51 @@ const agents: Agent[] = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <!-- Acheter avec mauvais crédit -->
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center">
-            <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4">Acheter une maison avec un mauvais crédit</h2>
-            <p class="text-gray-600 text-sm mb-6">Découvrez les solutions adaptées à votre situation financière</p>
-            <Link 
-              href="/services/acheter-une-maison-avec-un-mauvais-credit" 
-              class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
-            >
-              En savoir plus
-            </Link>
-          </div>
-
-          <!-- Reprise de possession -->
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center">
-            <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4">Reprise de possession</h2>
-            <p class="text-gray-600 text-sm mb-6">Accompagnement expert pour les propriétés en reprise de possession</p>
-            <Link 
-              href="/services/reprise-de-possession" 
-              class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
-            >
-              En savoir plus
-            </Link>
-          </div>
-
-          <!-- Pourquoi un Courtier Immobilier -->
-          <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center">
-            <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4">Pourquoi un Courtier Immobilier?</h2>
-            <p class="text-gray-600 text-sm mb-6">Les avantages d'être accompagné par un expert certifié</p>
-            <Link 
-              href="/services/un-service-de-courtier-immobilier" 
-              class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
-            >
-              En savoir plus
-            </Link>
-          </div>
+            <!-- Acheter avec mauvais crédit -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center flex flex-col">
+              <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4 min-h-[64px] flex items-center justify-center">
+                Acheter une maison avec un mauvais crédit
+              </h2>
+              <p class="text-gray-600 text-sm mb-6 flex-grow">
+                Découvrez les solutions adaptées à votre situation financière
+              </p>
+              <Link 
+                href="/services/acheter-une-maison-avec-un-mauvais-credit" 
+                class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
+              >
+                En savoir plus
+              </Link>
+            </div>
+            <!-- Reprise de possession -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center flex flex-col">
+              <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4 min-h-[64px] flex items-center justify-center">
+                Reprise de possession
+              </h2>
+              <p class="text-gray-600 text-sm mb-6 flex-grow">
+                Accompagnement expert pour les propriétés en reprise de possession
+              </p>
+              <Link 
+                href="/services/reprise-de-possession" 
+                class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
+              >
+                En savoir plus
+              </Link>
+            </div>
+            <!-- Pourquoi un Courtier Immobilier -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 p-8 text-center flex flex-col">
+              <h2 class="text-xl md:text-2xl font-serif text-gray-900 mb-4 min-h-[64px] flex items-center justify-center">
+                Pourquoi un Courtier Immobilier?
+              </h2>
+              <p class="text-gray-600 text-sm mb-6 flex-grow">
+                Les avantages d'être accompagné par un expert certifié
+              </p>
+              <Link 
+                href="/services/un-service-de-courtier-immobilier" 
+                class="inline-block bg-[#ac8c4c] hover:bg-[#8f6e3a] text-white font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md"
+              >
+                En savoir plus
+              </Link>
+            </div>
         </div>
 
         <CTASection />
