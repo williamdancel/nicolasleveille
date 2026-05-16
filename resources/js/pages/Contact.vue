@@ -54,7 +54,7 @@
                   <div>
                     <h3 class="font-semibold text-gray-900 mb-1">Téléphone</h3>
                     <a href="tel:+8196642182" class="text-gray-600 hover:text-red-500 transition-colors">
-                      819-664-2182
+                      819.664.2182
                     </a>
                   </div>
                 </div>
@@ -67,8 +67,8 @@
                   </div>
                   <div>
                     <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
-                    <a href="mailto:contact@nicolasleveille.ca" class="text-gray-600 hover:text-red-500 transition-colors">
-                      contact@nicolasleveille.ca
+                    <a href="mailto:nicolas.leveille@kw.com" class="text-gray-600 hover:text-red-500 transition-colors">
+                      nicolas.leveille@kw.com
                     </a>
                   </div>
                 </div>

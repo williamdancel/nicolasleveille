@@ -25,7 +25,7 @@ import { Link } from '@inertiajs/vue3'
           </h1>
 
           <p class="mt-4 text-base sm:text-lg opacity-80">
-            Nicolas Léveillé | Courtier immobilier Gatineauh
+            Nicolas Léveillé | Courtier immobilier Gatineau
           </p>
           <p class="mt-2 text-base sm:text-lg opacity-80">
             Aylmer, Hull, Chelsea, Gatineau, Pontiac
@@ -45,7 +45,7 @@ import { Link } from '@inertiajs/vue3'
           <!-- Buttons - side by side even on mobile -->
           <div class="flex flex-row gap-3 sm:gap-4">
             <a 
-              href="tel:819-664-2182" 
+              href="tel:8196642182" 
               class="bg-red-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base text-center whitespace-nowrap hover:bg-red-700 transition-colors"
             >
               Appelez-moi
