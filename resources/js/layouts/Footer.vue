@@ -10,7 +10,7 @@
           <ul class="space-y-2 text-gray-400">
             <li><a href="tel:+8196642182">819.664.2182</a></li>
             <li>nicolas.leveille@kw.com</li>
-            <li>Gatineau, secteur Aylmer</li>
+            <li>259 Blvd Saint-Joseph #104, Gatineau</li>
           </ul>
         </div>
 
