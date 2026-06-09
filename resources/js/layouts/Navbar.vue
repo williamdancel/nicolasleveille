@@ -68,11 +68,11 @@ onUnmounted(() => {
         <!-- <Link href="/a-propos-de-kw-distinction">À propos de Kw Distinction</Link> -->
         <Link href="/services">SERVICES</Link>
         <!-- <Link href="/acheter">ACHETER</Link> -->
-        <!-- <Link href="/vendres">VENDRES</Link> -->
+        <Link href="/vendre">VENDRE</Link>
         <!-- <Link href="/prestige">PRESTIGE</Link> -->
         <!-- <Link href="/properietes">MES Propriétés</Link> -->
         <Link href="/parc-immoblier">PARC IMMOBILIER</Link>
-        <Link href="/contact">Contactex-nous</Link>
+        <Link href="/contact">Contactez-nous</Link>
       </nav>
 
       <!-- Hamburger -->
@@ -99,7 +99,7 @@ onUnmounted(() => {
         <!-- <Link @click="toggleMenu" href="/a-propos-de-kw-distinction">À propos de Kw Distinction</Link> -->
         <Link @click="toggleMenu" href="/services">SERVICES</Link>
         <!-- <Link @click="toggleMenu" href="/acheter">ACHETER</Link> -->
-        <!-- <Link @click="toggleMenu" href="/vendres">VENDRES</Link> -->
+        <Link @click="toggleMenu" href="/vendre">Vendre</Link>
         <!-- <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link> -->
         <!-- <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link> -->
         <!-- <Link @click="toggleMenu" href="/properietes">MES Propriétés</Link> -->

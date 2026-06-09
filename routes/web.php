@@ -32,6 +32,10 @@ Route::get('/a-propos-de-kw-distinction', function () {
     return Inertia::render('AboutKwDistinction');
 })->name('a-propos-de-kw-distinction');
 
+Route::get('/vendre', function () {
+    return Inertia::render('Sell');
+})->name('vendre');
+
 Route::get('/parc-immoblier', function () {
     return Inertia::render('RealEstatePortfolio');
 })->name('real-estate-portfolio');

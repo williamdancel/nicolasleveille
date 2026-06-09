@@ -4,7 +4,7 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
 </script>
 
 <template>
-  <Head title="Profil" />
+  <Head title="À propos de Nicolas" />
 
   <div class="min-h-screen bg-[#f3f3f3] text-black overflow-hidden">
 
@@ -16,7 +16,7 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
       </div>
       
       <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <h1 class="text-5xl md:text-6xl font-serif animate-slide-up">PROFIL</h1>
+        <h1 class="text-5xl md:text-6xl font-serif animate-slide-up">À propos de Nicolas</h1>
         <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto mt-6 animate-scale"></div>
       </div>
     </section>
@@ -46,7 +46,7 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
               <img
                 src="/images/nicolas-leveille.jpg"
                 alt="Nicolas Léveillé"
-                class="w-[320px] md:w-[360px] object-cover"
+                class="w-[320px] md:w-[515px] object-cover"
               />
             </div>
           </div>
@@ -63,23 +63,22 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
 
             <!-- QUOTE -->
             <div class="flex items-center gap-5 mb-10">
-              <div class="w-[4px] h-12 bg-[#c89a56]"></div>
-
-              <p class="text-2xl font-light">
-                Avec Léveillé, c'est acheté
+              <div class="w-[4px] h-8 bg-[#c89a56]"></div>
+              <p class="text-sm font-light">
+                UN ACCOMPAGNEMENT STRATÉGIQUE ET HUMAIN.
               </p>
             </div>
 
             <!-- CONTENT -->
             <div class="max-w-2xl">
               <h2 class="text-3xl md:text-4xl font-black uppercase mb-6 leading-tight">
-                Faites partie de notre succès
+                Qui est Nicolas Léveillé?
               </h2>
 
               <p class="text-xl leading-relaxed text-gray-800 mb-10">
-                Partagez avec nous une approche moderne,
-                ambitieuse et fortement orientée résultats
-                pour le marché immobilier de l'Outaouais.
+                Je t'aide à vendre ou acheter une propriété avec une approche directe, structurée et axée sur les résultats. Chaque mandat mérite une stratégie claire, une exécution solide et une communication simple.
+                <br><br>
+                Avec KW comme agence, je mise sur un service moderne, une mise en marché forte et une négociation rigoureuse pour faire avancer ton projet immobilier avec confiance.
               </p>
             </div>
 
@@ -98,7 +97,7 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
         </div>
       </div>
     </section>
-
+    
     <!-- MIDDLE SECTION -->
     <section class="border-b-[4px] border-black">
       <div class="max-w-7xl mx-auto px-6 py-10">
@@ -106,11 +105,46 @@ import ContactForm from '@/components/ContactForm/ContactForm.vue'
 
           <!-- LEFT -->
           <div>
-            <p class="text-3xl leading-relaxed font-light max-w-2xl">
-              Vos besoins, votre échéancier, votre
-              maison. Un service entièrement
-              adapté à vous.
+             <!-- QUOTE -->
+            <div class="flex items-center gap-5 mb-5">
+              <div class="w-[4px] h-8 bg-[#c89a56]"></div>
+              <p class="text-sm font-light">
+                POURQUOI TRAVAILLER AVEC MOI?
+              </p>
+            </div>
+            <p class="text-3xl md:text-4xl font-black uppercase mb-6 leading-tight">
+              Un service net, rapide et solide.
             </p>
+            <p>
+              Mon objectif est simple: rendre la transaction plus claire, mieux encadrée et plus performante. Du positionnement au closing, chaque étape est pensée pour protéger tes intérêts et maximiser le résultat.
+            </p>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="lg:text-center">
+              <div class="border border-[#c89a56] p-1 inline-block bg-white">
+                <img
+                  src="/images/nicolas-on-phone-service.jpg"
+                  alt="Nicolas Léveillé On a Phone"
+                  class="w-[320px] md:w-[515px] object-cover"
+                />
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FORM SECTION -->
+    <section class="border-b-[4px] border-black">
+      <div class="max-w-7xl mx-auto px-6 py-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+          <!-- LEFT -->
+          <div>
+            <p class="text-sm md:text-sm font-black mb-6 leading-tight">TU PEUX COMPTER SUR MOI POUR ÉLEVER LE NIVEAU.</p>
+            <p class="text-3xl md:text-4xl font-black mb-6 leading-tight">Expérience locale</p>
+            <p class="text-3xl md:text-4xl font-black mb-6 leading-tight">Service personnalisé</p>
+            <p class="text-3xl md:text-4xl font-black mb-6 leading-tight">Résultats concrets</p>
+            
           </div>
 
           <!-- RIGHT -->
