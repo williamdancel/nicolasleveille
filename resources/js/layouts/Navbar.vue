@@ -63,14 +63,16 @@ onUnmounted(() => {
       
 
       <!-- Desktop -->
-      <nav class="hidden md:flex gap-8 tracking-wide navbar-menu">
-        <Link href="/profil">PROFIL</Link>
+      <nav class="hidden md:flex gap-8 tracking-wide navbar-menu uppercase">
+        <Link href="/profil">À propos de Nicolas</Link>
+        <!-- <Link href="/a-propos-de-kw-distinction">À propos de Kw Distinction</Link> -->
         <Link href="/services">SERVICES</Link>
-        <!-- <Link href="/properietes">PROPRIÉTÉS</Link> -->
-        <Link href="/prestige">PRESTIGE</Link>
+        <!-- <Link href="/acheter">ACHETER</Link> -->
+        <!-- <Link href="/vendres">VENDRES</Link> -->
+        <!-- <Link href="/prestige">PRESTIGE</Link> -->
+        <!-- <Link href="/properietes">MES Propriétés</Link> -->
         <Link href="/parc-immoblier">PARC IMMOBILIER</Link>
-        <!-- <Link href="/blogue">BLOGUE</Link> -->
-        <Link href="/contact">CONTACT</Link>
+        <Link href="/contact">Contactex-nous</Link>
       </nav>
 
       <!-- Hamburger -->
@@ -93,13 +95,16 @@ onUnmounted(() => {
       class="fixed inset-0 z-[60] bg-[#1a1820] flex flex-col items-center justify-center text-white text-lg"
     >
       <nav class="flex flex-col gap-6 text-center">
-        <Link @click="toggleMenu" href="/profil">PROFIL</Link>
+        <Link @click="toggleMenu" href="/profil">À propos de Nicolas</Link>
+        <!-- <Link @click="toggleMenu" href="/a-propos-de-kw-distinction">À propos de Kw Distinction</Link> -->
         <Link @click="toggleMenu" href="/services">SERVICES</Link>
+        <!-- <Link @click="toggleMenu" href="/acheter">ACHETER</Link> -->
+        <!-- <Link @click="toggleMenu" href="/vendres">VENDRES</Link> -->
         <!-- <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link> -->
-        <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link>
+        <!-- <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link> -->
+        <!-- <Link @click="toggleMenu" href="/properietes">MES Propriétés</Link> -->
         <Link @click="toggleMenu" href="/parc-immoblier">PARC IMMOBILIER</Link>
-        <!-- <Link @click="toggleMenu" href="/blogue">BLOGUE</Link> -->
-        <Link @click="toggleMenu" href="/contact">CONTACT</Link>
+        <Link @click="toggleMenu" href="/contact">Contactex-nous</Link>
       </nav>
 
       <!-- Close -->

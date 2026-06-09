@@ -12,8 +12,8 @@
         <p class="text-[#ac8c4c] uppercase text-sm tracking-wider font-semibold mb-4 animate-fade-in">
           Restons en contact
         </p>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 animate-slide-up">
-          CONTACT
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif mb-6 animate-slide-up uppercase">
+          Contactex-nous
         </h1>
         <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto animate-scale"></div>
         <p class="text-gray-300 mt-6 max-w-2xl mx-auto">

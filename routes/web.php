@@ -28,6 +28,10 @@ Route::get('/prestige', function () {
     return Inertia::render('Prestige');
 })->name('prestige');
 
+Route::get('/a-propos-de-kw-distinction', function () {
+    return Inertia::render('AboutKwDistinction');
+})->name('a-propos-de-kw-distinction');
+
 Route::get('/parc-immoblier', function () {
     return Inertia::render('RealEstatePortfolio');
 })->name('real-estate-portfolio');
