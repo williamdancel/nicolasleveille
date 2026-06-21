@@ -699,7 +699,6 @@ onUnmounted(() => {
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                 placeholder="J'aimerais plus d'informations sur cette propriété..."
               ></textarea>
-              <p class="text-xs text-gray-400 mt-1">Les détails de la propriété seront automatiquement inclus dans votre demande.</p>
             </div>
             
             <button 
