@@ -70,7 +70,7 @@ onUnmounted(() => {
         <!-- <Link href="/acheter">ACHETER</Link> -->
         <Link href="/vendre">VENDRE</Link>
         <!-- <Link href="/prestige">PRESTIGE</Link> -->
-        <!-- <Link href="/properietes">MES Propriétés</Link> -->
+        <Link href="/properietes">MES Propriétés</Link>
         <Link href="/parc-immoblier">PARC IMMOBILIER</Link>
         <Link href="/contact">Contactez-nous</Link>
       </nav>
@@ -100,9 +100,8 @@ onUnmounted(() => {
         <Link @click="toggleMenu" href="/services">SERVICES</Link>
         <!-- <Link @click="toggleMenu" href="/acheter">ACHETER</Link> -->
         <Link @click="toggleMenu" href="/vendre">Vendre</Link>
-        <!-- <Link @click="toggleMenu" href="/properietes">PROPRIÉTÉS</Link> -->
         <!-- <Link @click="toggleMenu" href="/prestige">PRESTIGE</Link> -->
-        <!-- <Link @click="toggleMenu" href="/properietes">MES Propriétés</Link> -->
+        <Link @click="toggleMenu" href="/properietes">MES Propriétés</Link>
         <Link @click="toggleMenu" href="/parc-immoblier">PARC IMMOBILIER</Link>
         <Link @click="toggleMenu" href="/contact">Contactex-nous</Link>
       </nav>

@@ -109,7 +109,7 @@ const submitForm = async () => {
                 >
             </div>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Nom *</label>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom de famille *</label>
                 <input 
                     v-model="formData.lastname"
                     type="text" 
