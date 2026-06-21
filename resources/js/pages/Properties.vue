@@ -52,6 +52,28 @@ const filterOptions: FilterOption[] = [
   { label: 'Terrains', value: 'terrain' }
 ]
 
+// Track expanded descriptions
+const expandedDescriptions = ref<Set<number>>(new Set())
+
+// Toggle description expansion
+const toggleDescription = (propertyId: number, event: Event) => {
+  event.stopPropagation()
+
+  if (expandedDescriptions.value.has(propertyId)) {
+    expandedDescriptions.value.delete(propertyId)
+  } else {
+    expandedDescriptions.value.add(propertyId)
+  }
+
+  // Trigger reactivity
+  expandedDescriptions.value = new Set(expandedDescriptions.value)
+}
+
+// Check if description is expanded
+const isDescriptionExpanded = (propertyId: number): boolean => {
+  return expandedDescriptions.value.has(propertyId)
+}
+
 // Properties data array
 const properties = ref<Property[]>([
   {
@@ -90,7 +112,6 @@ const properties = ref<Property[]>([
       { url: '/images/364-Rue-Jules-Bordet-Gatineau/photo-dom-1.png', caption: '' },
       { url: '/images/364-Rue-Jules-Bordet-Gatineau/photo-dom-2.png', caption: '' },
       { url: '/images/364-Rue-Jules-Bordet-Gatineau/photo-dom-3.png', caption: '' },
-      
     ]
   },
 ])
@@ -108,8 +129,8 @@ const submitSuccess = ref(false)
 // CSRF Token
 const getCsrfToken = (): string => {
   if (typeof document === 'undefined') {
-return ''
-}
+    return ''
+  }
 
   const token = document.querySelector('meta[name="csrf-token"]')
 
@@ -135,8 +156,8 @@ const filteredProperties = computed<Property[]>(() => {
 
 const currentImageCaption = computed(() => {
   if (currentGalleryImages.value.length === 0) {
-return ''
-}
+    return ''
+  }
 
   return currentGalleryImages.value[currentImageIndex.value]?.caption || 'Photo de la propriété'
 })
@@ -484,7 +505,24 @@ onUnmounted(() => {
                 </div>
                 <span class="text-red-600 font-bold text-lg price">{{ property.price }}</span>
               </div>
-              <p class="text-gray-600 text-sm mt-3 line-clamp-2">{{ property.description }}</p>
+              
+              <!-- Description with Show More/Less -->
+              <div class="mt-3">
+                <p 
+                  class="text-gray-600 text-sm"
+                  :class="isDescriptionExpanded(property.id) ? '' : 'line-clamp-2'"
+                >
+                  {{ property.description }}
+                </p>
+                <button 
+                  v-if="property.description && property.description.length > 100"
+                  @click="toggleDescription(property.id, $event)"
+                  class="text-red-600 hover:text-red-700 text-sm font-medium mt-1 transition-colors"
+                >
+                  {{ isDescriptionExpanded(property.id) ? 'Voir moins' : 'Voir plus' }}
+                </button>
+              </div>
+
               <div class="flex gap-4 mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
                 <span 
                   v-for="feature in property.features" 
@@ -674,7 +712,7 @@ onUnmounted(() => {
                 required
                 :disabled="isSubmitting"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-                placeholder="Email"
+                placeholder="email"
               >
             </div>
             

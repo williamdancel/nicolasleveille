@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
-import CTASection from '@/components/CTA/CTASection.vue'
 
 // Define interfaces
 interface PropertyImage {
@@ -27,7 +26,6 @@ interface Property {
   images: PropertyImage[]
   reference?: string
   description?: string
-  status?: string
 }
 
 interface InquiryFormData {
@@ -36,21 +34,6 @@ interface InquiryFormData {
   phone: string
   message: string
 }
-
-interface FilterOption {
-  label: string
-  value: 'all' | Property['type']
-}
-
-// Filter state
-const activeFilter = ref<FilterOption['value']>('all')
-
-const filterOptions: FilterOption[] = [
-  { label: 'Tous', value: 'all' },
-  { label: 'Maisons', value: 'maison' },
-  { label: 'Condos', value: 'condo' },
-  { label: 'Terrains', value: 'terrain' }
-]
 
 // Properties data array
 const properties = ref<Property[]>([
@@ -63,7 +46,6 @@ const properties = ref<Property[]>([
     type: 'maison',
     mainImage: '/images/364-Rue-Jules-Bordet-Gatineau/Front.png',
     reference: '',
-    status: 'À vendre',
     description: 'Superbe maison en rangée, unité de coin entièrement rénovée, située dans le secteur Hôpital--Val-Boisée, à proximité des services, transports, écoles et parcs. Elle offre trois chambres lumineuses, un grand salon convivial, une cuisine moderne et fonctionnelle ainsi que des salles de bain rénovées avec goût. Le sous-sol aménagé aux plafonds hauts propose un espace polyvalent pouvant servir de salle familiale, de bureau ou de salle de jeux. Profitez également d\'une grande terrasse rénovée, idéale pour recevoir et savourer la belle saison. Une propriété clé en main parfaite pour premiers acheteurs ou jeunes familles!',
     features: [
       { label: 'chambres', value: '3 chambres' },
@@ -90,10 +72,29 @@ const properties = ref<Property[]>([
       { url: '/images/364-Rue-Jules-Bordet-Gatineau/photo-dom-1.png', caption: '' },
       { url: '/images/364-Rue-Jules-Bordet-Gatineau/photo-dom-2.png', caption: '' },
       { url: '/images/364-Rue-Jules-Bordet-Gatineau/photo-dom-3.png', caption: '' },
-      
     ]
   },
 ])
+
+// Track expanded descriptions
+const expandedDescriptions = ref<Set<number>>(new Set())
+
+// Toggle description expansion
+const toggleDescription = (propertyId: number) => {
+  if (expandedDescriptions.value.has(propertyId)) {
+    expandedDescriptions.value.delete(propertyId)
+  } else {
+    expandedDescriptions.value.add(propertyId)
+  }
+
+  // Trigger reactivity
+  expandedDescriptions.value = new Set(expandedDescriptions.value)
+}
+
+// Check if description is expanded
+const isDescriptionExpanded = (propertyId: number): boolean => {
+  return expandedDescriptions.value.has(propertyId)
+}
 
 // Modal states
 const showModal = ref(false)
@@ -105,7 +106,7 @@ const isSubmitting = ref(false)
 const submitError = ref<string | null>(null)
 const submitSuccess = ref(false)
 
-// CSRF Token
+// CSRF Token - get from meta tag (Laravel default)
 const getCsrfToken = (): string => {
   if (typeof document === 'undefined') {
 return ''
@@ -125,14 +126,6 @@ const inquiryForm = reactive<InquiryFormData>({
 })
 
 // Computed properties
-const filteredProperties = computed<Property[]>(() => {
-  if (activeFilter.value === 'all') {
-    return properties.value
-  }
-
-  return properties.value.filter(property => property.type === activeFilter.value)
-})
-
 const currentImageCaption = computed(() => {
   if (currentGalleryImages.value.length === 0) {
 return ''
@@ -224,12 +217,14 @@ const previousImage = () => {
 const submitInquiry = async () => {
   submitError.value = null
 
+  // Validate form
   if (!inquiryForm.name || !inquiryForm.email || !inquiryForm.phone) {
     submitError.value = 'Veuillez remplir tous les champs obligatoires.'
 
     return
   }
 
+  // Split name
   const nameParts = splitFullName(inquiryForm.name)
   
   if (!nameParts) {
@@ -240,12 +235,14 @@ const submitInquiry = async () => {
 
   const { firstname, lastname } = nameParts
   
+  // Validate name lengths
   if (firstname.length < 2 || lastname.length < 2) {
     submitError.value = 'Veuillez entrer un prénom et un nom de famille valides (minimum 2 caractères chacun).'
 
     return
   }
 
+  // Validate email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
   if (!emailRegex.test(inquiryForm.email)) {
@@ -254,6 +251,7 @@ const submitInquiry = async () => {
     return
   }
 
+  // Validate phone
   const cleanPhone = inquiryForm.phone.replace(/[\s\(\)\-\.]/g, '')
 
   if (cleanPhone.length < 10) {
@@ -265,6 +263,7 @@ const submitInquiry = async () => {
   isSubmitting.value = true
 
   try {
+    // Prepare message with property details
     let finalMessage = ''
     
     if (selectedProperty.value) {
@@ -285,6 +284,7 @@ const submitInquiry = async () => {
       finalMessage += 'Aucun message additionnel fourni.'
     }
 
+    // Prepare payload
     const payload = {
       firstname: firstname,
       lastname: lastname,
@@ -294,6 +294,7 @@ const submitInquiry = async () => {
       type: 'visitation'
     }
 
+    // Send using fetch API
     const response = await fetch('/api/enquiries', {
       method: 'POST',
       headers: {
@@ -307,6 +308,7 @@ const submitInquiry = async () => {
     const data = await response.json()
 
     if (!response.ok) {
+      // Handle validation errors from Laravel
       if (data.errors) {
         const errorMessages = Object.values(data.errors).flat() as string[]
 
@@ -319,6 +321,7 @@ const submitInquiry = async () => {
     if (data.success) {
       submitSuccess.value = true
       
+      // Auto close after 2 seconds
       setTimeout(() => {
         closeModal()
       }, 2000)
@@ -391,140 +394,116 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Head title="Propriétés"/>
-
-  <div class="min-h-screen bg-white">
-    <!-- Hero Section -->
-    <section class="bg-gray-900 text-white py-32 text-center relative overflow-hidden">
-      <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-[#ac8c4c] rounded-full filter blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#ac8c4c] rounded-full filter blur-3xl animate-pulse-slow animation-delay-1000"></div>
-      </div>
+  <section class="py-24 bg-gray-50" id="properties">
+    <div class="max-w-7xl mx-auto px-6">
       
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <p class="text-[#ac8c4c] uppercase text-sm tracking-wider font-semibold mb-4">
-          Découvrez nos annonces
-        </p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif">
-          Maisons à vendre à Gatineau
-        </h1>
-        <div class="w-20 h-0.5 bg-[#ac8c4c] mx-auto mt-6"></div>
-        <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-          Sélection actuelle et présentation soignée des propriétés que je mets en marché.
-        </p>
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif text-gray-900 mt-2">
+            Propriétés à vendre
+          </h2>
+          <p class="text-gray-500 mt-2 max-w-2xl">
+            Un portefeuille choisi. Des biens d'exception et des coup de cœur du moment.
+          </p>
+        </div>
+        <Link href="/proprietes" class="mt-4 md:mt-0 text-gray-700 border-b border-gray-300 hover:border-red-500 hover:text-red-500 transition-colors font-medium">
+          Voir toutes les annonces →
+        </Link>
       </div>
-    </section>
 
-    <!-- Properties Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6">
+      <!-- Listings Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Header with Filters -->
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-serif text-gray-900 mt-2">
-              Propriétés à vendre
-            </h2>
-            <p class="text-gray-500 mt-2 max-w-2xl">
-              Un portefeuille choisi. Des biens d'exception et des coups de cœur du moment.
-            </p>
-          </div>
-          <div class="flex gap-3 mt-4 md:mt-0">
-            <button 
-              v-for="filterOption in filterOptions" 
-              :key="filterOption.value"
-              @click="activeFilter = filterOption.value" 
-              :class="activeFilter === filterOption.value ? 'bg-red-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-100'"
-              class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+        <div 
+          v-for="property in properties" 
+          :key="property.id"
+          class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+        >
+          <div 
+            class="relative h-64 overflow-hidden bg-gray-200 cursor-pointer"
+            @click="openGallery(property)"
+          >
+            <div 
+              v-if="property.badge"
+              class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm"
             >
-              {{ filterOption.label }}
+              {{ property.badge }}
+            </div>
+            <button 
+              @click.stop="openGallery(property)"
+              class="absolute bottom-4 right-4 z-10 bg-black/50 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+              </svg>
+              Voir photos
+            </button>
+            <img 
+              :src="property.mainImage" 
+              :alt="property.title" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              @error="handleImageError"
+            >
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">{{ property.title }}</h3>
+                <p class="text-gray-500 text-sm mt-1">{{ property.location }}</p>
+              </div>
+              <span class="text-red-600 font-bold text-lg price">{{ property.price }}</span>
+            </div>
+            
+            <!-- Description with Show More/Less -->
+            <div class="mt-3">
+              <p 
+                class="text-gray-600 text-sm"
+                :class="isDescriptionExpanded(property.id) ? '' : 'line-clamp-2'"
+              >
+                {{ property.description }}
+              </p>
+              <button 
+                v-if="property.description && property.description.length > 100"
+                @click.stop="toggleDescription(property.id)"
+                class="text-red-600 hover:text-red-700 text-sm font-medium mt-1 transition-colors"
+              >
+                {{ isDescriptionExpanded(property.id) ? 'Voir moins' : 'Voir plus' }}
+              </button>
+            </div>
+
+            <div class="flex gap-4 mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
+              <span 
+                v-for="feature in property.features" 
+                :key="feature.label"
+                class="flex items-center gap-1"
+              >
+                <svg 
+                  class="w-4 h-4" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="1.5" 
+                    :d="getFeatureIcon(feature.label)"
+                  />
+                </svg>
+                {{ feature.value }}
+              </span>
+            </div>
+            <button 
+              @click="openInquiryModal(property)"
+              class="mt-5 w-full py-2.5 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-200"
+            >
+              Demander une visite
             </button>
           </div>
         </div>
-
-        <!-- Listings Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <div 
-            v-for="property in filteredProperties" 
-            :key="property.id"
-            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
-          >
-            <div 
-              class="relative h-64 overflow-hidden bg-gray-200 cursor-pointer"
-              @click="openGallery(property)"
-            >
-              <div 
-                v-if="property.badge"
-                class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm"
-              >
-                {{ property.badge }}
-              </div>
-              <button 
-                @click.stop="openGallery(property)"
-                class="absolute bottom-4 right-4 z-10 bg-black/50 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
-                </svg>
-                Voir photos
-              </button>
-              <img 
-                :src="property.mainImage" 
-                :alt="property.title" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                @error="handleImageError"
-              >
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3 class="text-xl font-bold text-gray-900">{{ property.title }}</h3>
-                  <p class="text-gray-500 text-sm mt-1">{{ property.location }}</p>
-                </div>
-                <span class="text-red-600 font-bold text-lg price">{{ property.price }}</span>
-              </div>
-              <p class="text-gray-600 text-sm mt-3 line-clamp-2">{{ property.description }}</p>
-              <div class="flex gap-4 mt-4 text-sm text-gray-500 border-t border-gray-100 pt-4">
-                <span 
-                  v-for="feature in property.features" 
-                  :key="feature.label"
-                  class="flex items-center gap-1"
-                >
-                  <svg 
-                    class="w-4 h-4" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round" 
-                      stroke-width="1.5" 
-                      :d="getFeatureIcon(feature.label)"
-                    />
-                  </svg>
-                  {{ feature.value }}
-                </span>
-              </div>
-              <button 
-                @click="openInquiryModal(property)"
-                class="mt-5 w-full py-2.5 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-red-500 hover:border-red-500 hover:text-white transition-all duration-200"
-              >
-                Demander une visite
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- No Results Message -->
-        <div v-if="filteredProperties.length === 0" class="text-center py-12">
-          <p class="text-gray-500 text-lg">Aucune propriété dans cette catégorie pour le moment.</p>
-        </div>
-
-        <CTASection/>
       </div>
-    </section>
+    </div>
 
     <!-- Image Gallery Modal -->
     <Teleport to="body">
@@ -604,11 +583,7 @@ onUnmounted(() => {
 
     <!-- Inquiry Modal -->
     <Teleport to="body">
-      <div 
-        v-if="showModal" 
-        class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9998] p-4" 
-        @click.self="closeModal"
-      >
+      <div v-if="showModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[9998] p-4" @click.self="closeModal">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 relative animate-modal-in">
           <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-bold text-gray-900">Demander une visite</h3>
@@ -619,6 +594,7 @@ onUnmounted(() => {
             </button>
           </div>
           
+          <!-- Success Message -->
           <div v-if="submitSuccess" class="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -629,6 +605,7 @@ onUnmounted(() => {
             <p class="text-green-600 text-sm mt-1">Nous vous contacterons dans les 24 heures.</p>
           </div>
 
+          <!-- Error Message -->
           <div 
             v-if="submitError" 
             class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg"
@@ -642,6 +619,7 @@ onUnmounted(() => {
             </div>
           </div>
           
+          <!-- Property Info -->
           <div class="mb-4 p-3 bg-gray-50 rounded-lg">
             <p class="text-sm text-gray-500">Propriété sélectionnée</p>
             <p class="font-semibold text-gray-900">{{ selectedProperty?.title }}</p>
@@ -721,7 +699,7 @@ onUnmounted(() => {
         </div>
       </div>
     </Teleport>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -784,18 +762,5 @@ onUnmounted(() => {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.animation-delay-1000 {
-  animation-delay: 1s;
-}
-
-@keyframes pulse-slow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
 }
 </style>
